@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_message"
+        android:title="Message"
+        android:icon="@drawable/ic_message_black_24dp"/>
+    <item
+        android:id="@+id/nav_contact"
+        android:title="Contact"
+        android:icon="@drawable/ic_contacts_black_24dp"/>
+    <item
+        android:id="@+id/nav_story"
+        android:title="Story"
+        android:icon="@drawable/ic_access_time_black_24dp"/>
+    <item
+        android:id="@+id/nav_about"
+        android:title="About"
+        android:icon="@drawable/ic_info_outline_black_24dp"/>
+</menu>

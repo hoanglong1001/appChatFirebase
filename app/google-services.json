@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "591836910118",
+    "firebase_url": "https://techasians-appchat.firebaseio.com",
+    "project_id": "techasians-appchat",
+    "storage_bucket": "techasians-appchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591836910118:android:08d6da980d5d86e2cf8ce7",
+        "android_client_info": {
+          "package_name": "com.example.techasians_appchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591836910118-j7jmu62fh38pjdcdtmlri9ii5k66ouba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.techasians_appchat",
+            "certificate_hash": "2919e33c85c1d42fa99e2489df91f1abd54fa542"
+          }
+        },
+        {
+          "client_id": "591836910118-tf41k442t5r41ace98rphbcndghjcrbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf3rM96nXkrKojGKs1fFrsz0Jw8LKopsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591836910118-tf41k442t5r41ace98rphbcndghjcrbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
