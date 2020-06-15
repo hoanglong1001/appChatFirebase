@@ -55,6 +55,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        FirebaseDatabase.getInstance().setPersistenceEnabled(false);
+
         initView();
     }
 
@@ -133,6 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         personPhoto = firebaseUser.getPhotoUrl().toString();
                     }
                     User user = new User(personId, personName, personPhoto, "on");
+                    Log.d("TEST", "onComplete: " + user);
                     addUserDatabase(user);
                 } else {
                     updateUI(null);

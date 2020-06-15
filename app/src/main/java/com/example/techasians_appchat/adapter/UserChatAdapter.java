@@ -111,7 +111,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Recycl
                     if (message.getReceiver().equals(fuser.getUid()) && message.getSender().equals(userId) ||
                             message.getSender().equals(fuser.getUid()) && message.getReceiver().equals(userId)) {
                         if (message.getType().equals("text")) {
-                            lastMessage = message.getMessage();
+                            lastMessage = message.getMessage().trim();
                             lastMessage = lastMessage.replaceAll("\n", " ");
                             mes.setText(lastMessage);
                         } else {

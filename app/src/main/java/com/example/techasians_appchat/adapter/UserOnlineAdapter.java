@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.techasians_appchat.R;
 import com.example.techasians_appchat.model.User;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -36,10 +37,18 @@ public class UserOnlineAdapter extends RecyclerView.Adapter<UserOnlineAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtName.setText(listUser.get(position).getName());
-        Glide.with(context).load(listUser.get(position).getAvatar())
+        User user = listUser.get(position);
+        holder.txtName.setText(user.getName());
+        Glide.with(context).load(user.getAvatar())
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgAvatar);
+        if (user.getState().equals("on")) {
+            holder.imgOn.setVisibility(View.VISIBLE);
+            holder.imgOff.setVisibility(View.GONE);
+        } else {
+            holder.imgOn.setVisibility(View.GONE);
+            holder.imgOff.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -50,10 +59,15 @@ public class UserOnlineAdapter extends RecyclerView.Adapter<UserOnlineAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgAvatar;
         TextView txtName;
+        RoundedImageView imgOn;
+        RoundedImageView imgOff;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgAvatar = itemView.findViewById(R.id.img_user_online);
             txtName = itemView.findViewById(R.id.name_user_online);
+            imgOn = itemView.findViewById(R.id.stt_on_user_online);
+            imgOff = itemView.findViewById(R.id.stt_off_user_online);
         }
     }
 }

@@ -193,7 +193,7 @@ public class MessageFragment extends Fragment {
                     User user = snapshot.getValue(User.class);
                     assert user != null;
                     assert firebaseUser != null;
-                    if (user.getState().equals("on") && !user.getId().equals(firebaseUser.getUid())) {
+                    if (user.getState() != null && user.getState().equals("on") && user.getId() != null && !user.getId().equals(firebaseUser.getUid())) {
                         usersOnline.add(user);
                     }
                 }

@@ -21,6 +21,7 @@
         <activity android:name=".activity.MainActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activity.RoomChatActivity"/>
+        <activity android:name=".activity.ShowPhotoActivity"/>
     </application>
 
 </manifest>

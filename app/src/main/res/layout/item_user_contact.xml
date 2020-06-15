@@ -19,6 +19,28 @@
         app:riv_border_color="#858383"
         app:riv_border_width="1dp"
         app:riv_oval="true" />
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/stt_on_user_cont"
+        android:layout_alignBottom="@+id/img_user_cont"
+        android:layout_toEndOf="@+id/img_user_cont"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="-20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/item_online"
+        app:riv_oval="true" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/stt_off_user_cont"
+        android:layout_alignBottom="@+id/img_user_cont"
+        android:layout_toEndOf="@+id/img_user_cont"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="-20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/item_offline"
+        app:riv_oval="true" />
+
     <TextView
         android:id="@+id/name_user_cont"
         android:layout_centerVertical="true"

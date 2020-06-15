@@ -16,6 +16,7 @@ import com.example.techasians_appchat.R;
 import com.example.techasians_appchat.activity.RoomChatActivity;
 import com.example.techasians_appchat.callback.ItemClickListener;
 import com.example.techasians_appchat.model.User;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,13 @@ public class UserContactAdapter extends RecyclerView.Adapter<UserContactAdapter.
         Glide.with(context).load(user.getAvatar())
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgAvatar);
+        if (user.getState().equals("on")) {
+            holder.imgOn.setVisibility(View.VISIBLE);
+            holder.imgOff.setVisibility(View.GONE);
+        } else {
+            holder.imgOn.setVisibility(View.GONE);
+            holder.imgOff.setVisibility(View.VISIBLE);
+        }
         holder.setItemClick(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -69,10 +77,15 @@ public class UserContactAdapter extends RecyclerView.Adapter<UserContactAdapter.
         private ItemClickListener itemClick;
         ImageView imgAvatar;
         TextView txtName;
+        RoundedImageView imgOn;
+        RoundedImageView imgOff;
+
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             imgAvatar = itemView.findViewById(R.id.img_user_cont);
             txtName = itemView.findViewById(R.id.name_user_cont);
+            imgOn = itemView.findViewById(R.id.stt_on_user_cont);
+            imgOff = itemView.findViewById(R.id.stt_off_user_cont);
             itemView.setOnClickListener(this);
         }
 
