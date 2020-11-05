@@ -1,6 +1,7 @@
 package com.example.techasians_appchat.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.techasians_appchat.R;
+import com.example.techasians_appchat.activity.RoomChatActivity;
+import com.example.techasians_appchat.callback.ItemClickListener;
 import com.example.techasians_appchat.model.User;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -37,7 +40,7 @@ public class UserOnlineAdapter extends RecyclerView.Adapter<UserOnlineAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = listUser.get(position);
+        final User user = listUser.get(position);
         holder.txtName.setText(user.getName());
         Glide.with(context).load(user.getAvatar())
                 .placeholder(R.drawable.ic_launcher_background)
@@ -49,6 +52,14 @@ public class UserOnlineAdapter extends RecyclerView.Adapter<UserOnlineAdapter.Vi
             holder.imgOn.setVisibility(View.GONE);
             holder.imgOff.setVisibility(View.VISIBLE);
         }
+        holder.imgAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, RoomChatActivity.class);
+                intent.putExtra("userId", user.getId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -57,6 +68,8 @@ public class UserOnlineAdapter extends RecyclerView.Adapter<UserOnlineAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private ItemClickListener itemClick;
         ImageView imgAvatar;
         TextView txtName;
         RoundedImageView imgOn;

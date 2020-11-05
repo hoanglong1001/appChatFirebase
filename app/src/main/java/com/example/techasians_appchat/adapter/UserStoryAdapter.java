@@ -81,6 +81,7 @@ public class UserStoryAdapter extends RecyclerView.Adapter<UserStoryAdapter.Recy
         TextView txtStatus;
         TextView num_favorite;
         ImageView imgPicture;
+        ImageView imgFavorite;
         LinearLayout ll_like;
 
         public RecyclerViewHolder(@NonNull View itemView) {
@@ -91,6 +92,7 @@ public class UserStoryAdapter extends RecyclerView.Adapter<UserStoryAdapter.Recy
             txtStatus = itemView.findViewById(R.id.stt_story);
             imgPicture = itemView.findViewById(R.id.img_story);
             num_favorite = itemView.findViewById(R.id.num_favorite);
+            imgFavorite = itemView.findViewById(R.id.favorite);
             ll_like = itemView.findViewById(R.id.ll_like);
         }
     }

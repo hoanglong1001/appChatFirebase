@@ -160,10 +160,10 @@ public class MessageFragment extends Fragment {
                 }
                 Collections.sort(usersChat, new Comparator<User>() {
                     @Override
-                    public int compare(User sender, User t1) {
-                        if (sender.getIndex() > t1.getIndex()) {
+                    public int compare(User user, User t1) {
+                        if (user.getIndex() > t1.getIndex()) {
                             return 1;
-                        } else  if (sender.getIndex() < t1.getIndex()) {
+                        } else  if (user.getIndex() < t1.getIndex()) {
                             return -1;
                         }
                         return 0;
@@ -193,7 +193,8 @@ public class MessageFragment extends Fragment {
                     User user = snapshot.getValue(User.class);
                     assert user != null;
                     assert firebaseUser != null;
-                    if (user.getState() != null && user.getState().equals("on") && user.getId() != null && !user.getId().equals(firebaseUser.getUid())) {
+                    if (user.getState() != null && user.getState().equals("on") && user.getId() != null &&
+                            !user.getId().equals(firebaseUser.getUid())) {
                         usersOnline.add(user);
                     }
                 }

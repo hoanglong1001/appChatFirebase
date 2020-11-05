@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
+    android:layout_margin="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,14 +11,13 @@
         android:layout_gravity="center"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="8dp"
+        android:layout_margin="12dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
-        app:riv_border_color="#7A7A7A"
-        app:riv_border_width="1dp"
         app:riv_oval="true" />
 
     <LinearLayout
+        android:layout_marginRight="10dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <View
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:background="#B4B4B4"
             android:layout_width="match_parent"

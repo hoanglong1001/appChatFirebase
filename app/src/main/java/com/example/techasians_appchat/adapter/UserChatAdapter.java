@@ -81,6 +81,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Recycl
         ImageView imgAvatar;
         TextView txtName;
         TextView txtChat;
+
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             imgAvatar = itemView.findViewById(R.id.img_user_chat);

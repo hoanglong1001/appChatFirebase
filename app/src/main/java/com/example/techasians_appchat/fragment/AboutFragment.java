@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,10 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
     private EditText mEdtDiachi;
     private TextView mEdtNgaysinh;
     private EditText mEdtCmt;
+    private ImageView mIvEditHoten;
+    private ImageView mIvEditNgaysinh;
+    private ImageView mIvEditDiachi;
+    private ImageView mIvEditCmt;
     private Button mBtnUpdate;
     private Button mBtnEdit;
     private User userCurrent;
@@ -60,6 +65,10 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
         mEdtDiachi = view.findViewById(R.id.edt_diachi);
         mEdtNgaysinh = view.findViewById(R.id.edt_ngaysinh);
         mEdtCmt = view.findViewById(R.id.edt_cmt);
+        mIvEditHoten = view.findViewById(R.id.iv_edit_hoten);
+        mIvEditNgaysinh = view.findViewById(R.id.iv_edit_ngaysinh);
+        mIvEditDiachi = view.findViewById(R.id.iv_edit_diachi);
+        mIvEditCmt = view.findViewById(R.id.iv_edit_cmt);
         mBtnUpdate = view.findViewById(R.id.btn_update);
         mBtnEdit = view.findViewById(R.id.btn_edit);
 
@@ -91,13 +100,17 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
         if (view.getId() == R.id.btn_edit) {
             mEdtHoten.setEnabled(true);
             mEdtHoten.setAlpha(1);
+            mIvEditHoten.setVisibility(View.VISIBLE);
             mEdtDiachi.setEnabled(true);
             mEdtDiachi.setAlpha(1);
+            mIvEditDiachi.setVisibility(View.VISIBLE);
             mEdtNgaysinh.setEnabled(true);
             mEdtNgaysinh.setAlpha(1);
+            mIvEditNgaysinh.setVisibility(View.VISIBLE);
             mEdtCmt.setEnabled(true);
             mEdtCmt.setAlpha(1);
-            mBtnUpdate.setEnabled(true);
+            mIvEditCmt.setVisibility(View.VISIBLE);
+            mBtnUpdate.setVisibility(View.VISIBLE);
         }
         if (view.getId() == R.id.edt_ngaysinh) {
             final Calendar calendar = Calendar.getInstance();
@@ -139,13 +152,17 @@ public class AboutFragment extends Fragment implements View.OnClickListener {
                         }
                     });
             mEdtHoten.setEnabled(false);
-            mEdtHoten.setAlpha(0.5f);
+            mEdtHoten.setAlpha(0.2f);
+            mIvEditHoten.setVisibility(View.INVISIBLE);
             mEdtDiachi.setEnabled(false);
-            mEdtDiachi.setAlpha(0.5f);
+            mEdtDiachi.setAlpha(0.2f);
+            mIvEditDiachi.setVisibility(View.INVISIBLE);
             mEdtNgaysinh.setEnabled(false);
-            mEdtNgaysinh.setAlpha(0.5f);
+            mEdtNgaysinh.setAlpha(0.2f);
+            mIvEditNgaysinh.setVisibility(View.INVISIBLE);
             mEdtCmt.setEnabled(false);
-            mEdtCmt.setAlpha(0.5f);
+            mEdtCmt.setAlpha(0.2f);
+            mIvEditCmt.setVisibility(View.INVISIBLE);
             mBtnUpdate.setEnabled(false);
         }
     }

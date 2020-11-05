@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +47,7 @@ public class RoomChatActivity extends AppCompatActivity implements View.OnClickL
 
     private static final int REQUEST_CODE = 100;
     private static final int IMAGE_GALLERY = 200;
-    private Toolbar mToolbar;
+    private ImageView imgBack;
     private RoundedImageView mImgAvatar;
     private TextView mTxtName;
     private ImageButton mImgSend;
@@ -76,13 +76,8 @@ public class RoomChatActivity extends AppCompatActivity implements View.OnClickL
 
         initView();
         initData();
-        actionToolBar();
-    }
 
-    private void actionToolBar() {
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -91,7 +86,7 @@ public class RoomChatActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initView() {
-        mToolbar = findViewById(R.id.toolbar_room_chat);
+        imgBack = findViewById(R.id.img_back);
         mImgAvatar = findViewById(R.id.img_user_chat);
         mTxtName = findViewById(R.id.name_user_chat);
         mEdtChat = findViewById(R.id.edt_chat);
